@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+
+      <link rel="stylesheet" type="text/css" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="jquery-3.4.1.min.js"></script>
+
+</head>
+
+<style type="text/css">
+  table {
+  border-spacing: 0;
+  width: 80%;
+}
+  .invis {
+  display: none;
+  }
+    .flex {
+      display:flex;
+    }
+    .box {
+      width: 75px;
+      height: 75px;
+    }
+    .red {
+      background-color: rgb(172,15,15);
+      color: rgb(172,15,15);
+    }
+    .orange {
+      background-color: rgb(222,119,17);
+      color: rgb(222,119,17);
+    }
+    .yellow {
+      background-color: rgb(215, 223, 18);
+      color: rgb(215, 223, 18);
+    }
+    .lime {
+      background-color: rgb(104,222, 18);
+      color: rgb(104,222, 18);
+    }
+    .green {
+      background-color: rgb(17,222, 109);
+      color: rgb(17,222, 109);
+    }
+    .cyan {
+      background-color: rgb(17,196, 222);
+      color: rgb(17,196, 222);
+    }
+    .blue {
+      background-color: rgb(17,41,223);
+      color: rgb(17,41,223);
+    }
+    .purple {
+      background-color: rgb(118,18, 224);
+      color: rgb(118,18, 224);
+    }
+    .pink {
+      background-color: rgb(223, 17, 181);
+      color: rgb(223, 17, 181);
+    }
+
+  label[for=element-toggle] {
+  cursor: pointer;
+  color: black;
+}
+#element-toggle {
+  display: none;
+}
+
+#element-toggle:checked ~ #toggled-element tr {
+  display: block;
+  float: left;
+}
+#element-toggle:checked ~ #toggled-element th,
+#element-toggle:checked ~ #toggled-element td {
+  display: block;
+}
+
+</style>
+<body>
+
+<div class = "container">
+
+<h1>Coding Challenge</h1>
+<p>The first time you click, the sorting direction is ascending (Low to High).
+<br> Click again, and the sorting direction will be descending.</p>
+
+<div class = "d-flex container justify-content-between">
+    <button class = "btn btn-lg" 
+    onclick="sortTable(0)">NORMAL</button>
+
+    <button class = "btn btn-danger btn-lg" 
+    onclick="sortTable(1)">RED</button>
+
+    <button class = "btn btn-success btn-lg" 
+    onclick="sortTable(2)">GREEN</button>
+
+    <button class = "btn btn-primary btn-lg"
+    onclick="sortTable(3)">BLUE</button> 
+
+  </div>
+  <label for="element-toggle"> <strong> Switch Axis </strong>
+  
+  </label>
+
+<input id="element-toggle" type="checkbox" />
+
+<table id="toggled-element">
+ <tbody>
+  <tr> </tr>
+  <tr>
+    <td class = "box red"> <span class = "invis">1 </span></td>
+    <td><span class = "invis">4</span></td>
+    <td><span class = "invis">1</span></td>
+    <td><span class = "invis">1</span></td>
+  </tr>
+
+  <tr>
+    <td class = "box orange"> <span class = "invis">2 </span></td>
+    <td><span class = "invis">6</span></td>
+    <td><span class = "invis">5</span></td>
+    <td><span class = "invis">2</span></td>
+  </tr>
+
+  <tr>
+    <td class = "box yellow"><span class = "invis">3</span></td>
+    <td><span class = "invis">5</span></td>
+    <td><span class = "invis">8</span></td>
+    <td><span class = "invis">3</span></td>
+  </tr>
+
+  <tr>
+    <td class = "box lime"><span class = "invis">4</span></td>
+    <td><span class = "invis">2</span></td>
+    <td><span class = "invis">7</span></td>
+    <td><span class = "invis">3</span></td>
+  </tr>
+
+  <tr>
+    <td class = "box green"><span class = "invis">5</span></td>
+    <td><span class = "invis">1</span></td>
+    <td><span class = "invis">7</span></td>
+    <td><span class = "invis">4</span></td>
+  </tr>
+
+  <tr>
+    <td class = "box cyan"><span class = "invis">6</span></td>
+    <td><span class = "invis">1</span></td>
+    <td><span class = "invis">6</span></td>
+    <td><span class = "invis">6</span></td>
+  </tr>
+
+  <tr>
+    <td class = "box blue"><span class = "invis">7</span></td>
+    <td><span class = "invis">1</span></td>  
+    <td><span class = "invis">4</span></td>
+    <td><span class = "invis">7</span></td>
+  </tr>
+
+ <tr>
+    <td class = "box purple"><span class = "invis">8</span></td>
+    <td><span class = "invis">3</span></td>
+    <td><span class = "invis">3</span></td>
+    <td><span class = "invis">8</span></td>
+  </tr>
+
+   <tr>
+    <td class = "box pink"><span class = "invis">9</span></td>
+    <td><span class = "invis">7</span></td>
+    <td><span class = "invis">2</span></td>
+    <td><span class = "invis">5</span></td>
+  </tr>
+ </tbody>
+
+</table>
+</div>
+
+<script>
+function sortTable(n) {
+  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+  table = document.getElementById("toggled-element");
+  switching = true;
+// Sets sorting direction:
+  dir = "asc"; 
+//Loop
+  while (switching) {
+//no switch
+    switching = false;
+    rows = table.rows;
+//goes through all the table rows -- needs an arbitrary <tr>
+    for (i = 1; i < (rows.length - 1); i++) {
+//should be no switching
+      shouldSwitch = false;
+//grab two to compare
+      x = rows[i].getElementsByTagName("TD")[n];
+      y = rows[i + 1].getElementsByTagName("TD")[n];
+//should these swap places? 
+      if (dir == "asc") {
+        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+//mark as "needs switch" and breaks loop
+          shouldSwitch= true;
+          break;
+        }
+      } else if (dir == "desc") {
+        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+          shouldSwitch = true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+//if switch is marked, confirm that it's been done
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+//each switch, count +1
+      switchcount ++;      
+    } else {
+//repeat
+      if (switchcount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
+}
+</script>
+
+</body>
+</html>
