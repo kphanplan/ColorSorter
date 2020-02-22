@@ -1,27 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
-
-      <link rel="stylesheet" type="text/css" 
+	<title>New</title>
+	<link rel="stylesheet" type="text/css" 
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="jquery-3.4.1.min.js"></script>
 
-</head>
 
-<style type="text/css">
-  table {
-  border-spacing: 0;
-  width: 80%;
-}
-  .invis {
+	<style> 
+  #myTable {
+    border: none;
+  }
+
+  #myTable tr td {
+    border: none;
+    border-bottom: 1px solid #aaa;
+    text-align: center;
+  }
+  #myTable tr td:first-child {
+    background-color: #e0e0e0;
+    border-bottom: 1px solid #aaa;
+    text-align: center;
+  }
+
+
+    .invis {
   display: none;
   }
     .flex {
       display:flex;
     }
     .box {
+      border: 1px black solid;
       width: 75px;
       height: 75px;
     }
@@ -61,172 +72,274 @@
       background-color: rgb(223, 17, 181);
       color: rgb(223, 17, 181);
     }
+	</style>
+</head>
 
-  label[for=element-toggle] {
-  cursor: pointer;
-  color: black;
-}
-#element-toggle {
-  display: none;
-}
 
-#element-toggle:checked ~ #toggled-element tr {
-  display: block;
-  float: left;
-}
-#element-toggle:checked ~ #toggled-element th,
-#element-toggle:checked ~ #toggled-element td {
-  display: block;
-}
 
-</style>
 <body>
 
-<div class = "container">
-
 <h1>Coding Challenge</h1>
-<p>The first time you click, the sorting direction is ascending (Low to High).
-<br> Click again, and the sorting direction will be descending.</p>
 
-<div class = "d-flex container justify-content-between">
-    <button class = "btn btn-lg" 
-    onclick="sortTable(0)">NORMAL</button>
-
-    <button class = "btn btn-danger btn-lg" 
-    onclick="sortTable(1)">RED</button>
-
-    <button class = "btn btn-success btn-lg" 
-    onclick="sortTable(2)">GREEN</button>
-
-    <button class = "btn btn-primary btn-lg"
-    onclick="sortTable(3)">BLUE</button> 
-
-  </div>
-  <label for="element-toggle"> <strong> Switch Axis </strong>
-  
-  </label>
-
-<input id="element-toggle" type="checkbox" />
-
-<table id="toggled-element">
- <tbody>
-  <tr> </tr>
-  <tr>
-    <td class = "box red"> <span class = "invis">1 </span></td>
-    <td><span class = "invis">4</span></td>
-    <td><span class = "invis">1</span></td>
-    <td><span class = "invis">1</span></td>
-  </tr>
-
-  <tr>
-    <td class = "box orange"> <span class = "invis">2 </span></td>
-    <td><span class = "invis">6</span></td>
-    <td><span class = "invis">5</span></td>
-    <td><span class = "invis">2</span></td>
-  </tr>
-
-  <tr>
-    <td class = "box yellow"><span class = "invis">3</span></td>
-    <td><span class = "invis">5</span></td>
-    <td><span class = "invis">8</span></td>
-    <td><span class = "invis">3</span></td>
-  </tr>
-
-  <tr>
-    <td class = "box lime"><span class = "invis">4</span></td>
-    <td><span class = "invis">2</span></td>
-    <td><span class = "invis">7</span></td>
-    <td><span class = "invis">3</span></td>
-  </tr>
-
-  <tr>
-    <td class = "box green"><span class = "invis">5</span></td>
-    <td><span class = "invis">1</span></td>
-    <td><span class = "invis">7</span></td>
-    <td><span class = "invis">4</span></td>
-  </tr>
-
-  <tr>
-    <td class = "box cyan"><span class = "invis">6</span></td>
-    <td><span class = "invis">1</span></td>
-    <td><span class = "invis">6</span></td>
-    <td><span class = "invis">6</span></td>
-  </tr>
-
-  <tr>
-    <td class = "box blue"><span class = "invis">7</span></td>
-    <td><span class = "invis">1</span></td>  
-    <td><span class = "invis">4</span></td>
-    <td><span class = "invis">7</span></td>
-  </tr>
-
- <tr>
-    <td class = "box purple"><span class = "invis">8</span></td>
-    <td><span class = "invis">3</span></td>
-    <td><span class = "invis">3</span></td>
-    <td><span class = "invis">8</span></td>
-  </tr>
-
-   <tr>
-    <td class = "box pink"><span class = "invis">9</span></td>
-    <td><span class = "invis">7</span></td>
-    <td><span class = "invis">2</span></td>
-    <td><span class = "invis">5</span></td>
-  </tr>
- </tbody>
-
-</table>
+<div class = "d-flex mb-3">
+<h3>RAINBOW</h3>
+<button onclick="sortTable(0,0)">NORMAL</button>
 </div>
 
+<div class = "d-flex mb-5">
+<h3>SORT BY: </h3>
+    <button class = "btn btn-danger btn-lg"
+    onclick="sortTable(1,0)">SORT: RED</button>
+   	<button class = "btn btn-success btn-lg"
+   	onclick="sortTable(2,0)">SORT: GREEN</button>
+	<button class = "btn btn-info btn-lg"
+   	onclick="sortTable(3,0)">SORT: BLUE</button>
+</div>
+
+<table id="myTable">
+  <tbody>
+    <tr>
+      <th> >>> </th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+    </tr>
+    <tr>
+    <td class = "box">1</td>
+<!-- RED -->
+   	<td> 	<div class = "4 box red"> 	 	</div></td> 
+    <td> 	<div class = "6 box orange">  	</div></td> 
+    <td> 	<div class = "5 box yellow">  	</div></td> 
+    <td> 	<div class = "2 box lime"> 	 	</div></td> 
+    <td> 	<div class = "1 box green"> 	</div></td> 
+    <td> 	<div class = "1 box cyan"> 		</div></td> 
+    <td> 	<div class = "1 box blue"> 	 	</div></td> 
+    <td> 	<div class = "3 box purple"> 	</div></td> 
+    <td> 	<div class = "7 box pink"> 	 	</div></td> 
+    </tr>
+
+<!-- GREEN -->
+
+    <tr>
+    <td>2 </td>
+    <td> 	<div class = "1 box red"> 	 	</div></td> 
+    <td> 	<div class = "5 box orange">  	</div></td> 
+    <td> 	<div class = "8 box yellow">  	</div></td> 
+    <td> 	<div class = "7 box lime"> 	 	</div></td> 
+    <td>	<div class = "7 box green"> 	</div></td> 
+    <td> 	<div class = "6 box cyan"> 		</div></td> 
+    <td> 	<div class = "4 box blue"> 	 	</div></td> 
+    <td> 	<div class = "3 box purple"> 	</div></td> 
+    <td> 	<div class = "2 box pink"> 	 	</div></td> 
+    </tr>
+
+<!-- BLUE -->
+    <tr>
+    <td>3</td>
+    <td> 	<div class = "1 box red"> 	 	</div></td> 
+    <td> 	<div class = "2 box orange">  	</div></td> 
+    <td> 	<div class = "3 box yellow">  	</div></td> 
+    <td> 	<div class = "3 box lime"> 	 	</div></td> 
+    <td> 	<div class = "4 box green"> 	</div></td> 
+    <td> 	<div class = "6 box cyan"> 		</div></td> 
+    <td> 	<div class = "7 box blue"> 	 	</div></td> 
+    <td> 	<div class = "8 box purple"> 	</div></td> 
+    <td> 	<div class = "5 box pink"> 	 	</div></td> 
+    </tr>
+
+    <tr>
+    <td>4 </td>
+    <td> 	<div class = "4 box red"> 	 	</div></td> 
+    <td> 	<div class = "6 box orange">  	</div></td> 
+    <td> 	<div class = "5 box yellow">  	</div></td> 
+    <td> 	<div class = "2 box lime"> 	 	</div></td> 
+    <td> 	<div class = "1 box green"> 	</div></td> 
+    <td> 	<div class = "1 box cyan"> 		</div></td> 
+    <td> 	<div class = "1 box blue"> 	 	</div></td> 
+    <td> 	<div class = "3 box purple"> 	</div></td> 
+    <td> 	<div class = "7 box pink"> 	 	</div></td> 
+    </tr> 
+
+    <tr>
+    <td>5</td>
+    <td> 	<div class = "1 box red"> 	 	</div></td> 
+    <td> 	<div class = "5 box orange">  	</div></td> 
+    <td> 	<div class = "8 box yellow">  	</div></td> 
+    <td> 	<div class = "7 box lime"> 	 	</div></td> 
+    <td> 	<div class = "7 box green"> 	</div></td> 
+    <td> 	<div class = "6 box cyan"> 		</div></td> 
+    <td> 	<div class = "4 box blue"> 	 	</div></td> 
+    <td> 	<div class = "3 box purple"> 	</div></td> 
+    <td> 	<div class = "2 box pink"> 	 	</div></td> 
+    </tr> 
+
+    <tr>
+    <td>6</td>
+    <td> 	<div class = "1 box red"> 	 	</div></td> 
+    <td> 	<div class = "2 box orange">  	</div></td> 
+    <td> 	<div class = "3 box yellow">  	</div></td> 
+    <td> 	<div class = "3 box lime"> 	 	</div></td> 
+    <td> 	<div class = "4 box green"> 	</div></td> 
+    <td> 	<div class = "6 box cyan"> 		</div></td> 
+    <td> 	<div class = "7 box blue"> 	 	</div></td> 
+    <td> 	<div class = "8 box purple"> 	</div></td> 
+    <td> 	<div class = "5 box pink"> 	 	</div></td> 
+    </tr> 
+
+    <tr>
+    <td>7</td>
+   	<td> 	<div class = "4 box red"> 	 	</div></td> 
+    <td> 	<div class = "6 box orange">  	</div></td> 
+    <td> 	<div class = "5 box yellow">  	</div></td> 
+    <td> 	<div class = "2 box lime"> 	 	</div></td> 
+    <td> 	<div class = "1 box green"> 	</div></td> 
+    <td> 	<div class = "1 box cyan"> 		</div></td> 
+    <td> 	<div class = "1 box blue"> 	 	</div></td> 
+    <td> 	<div class = "3 box purple"> 	</div></td> 
+    <td> 	<div class = "7 box pink"> 	 	</div></td> 
+    </tr> 
+
+    <tr>
+    <td>8</td>
+    <td> 	<div class = "1 box red"> 	 	</div></td> 
+    <td> 	<div class = "5 box orange">  	</div></td> 
+    <td> 	<div class = "8 box yellow">  	</div></td> 
+    <td> 	<div class = "7 box lime"> 	 	</div></td> 
+    <td> 	<div class = "7 box green"> 	</div></td> 
+    <td> 	<div class = "6 box cyan"> 		</div></td> 
+    <td> 	<div class = "4 box blue"> 	 	</div></td> 
+    <td> 	<div class = "3 box purple"> 	</div></td> 
+    <td> 	<div class = "2 box pink"> 	 	</div></td> 
+    </tr> 
+
+    <tr>
+    <td>9 	</td>
+    <td> 	<div class = "1 box red"> 	 	</div></td> 
+    <td> 	<div class = "2 box orange">  	</div></td> 
+    <td> 	<div class = "3 box yellow">  	</div></td> 
+    <td> 	<div class = "3 box lime"> 	 	</div></td> 
+    <td> 	<div class = "4 box green"> 	</div></td> 
+    <td> 	<div class = "6 box cyan"> 		</div></td> 
+    <td> 	<div class = "7 box blue"> 	 	</div></td> 
+    <td> 	<div class = "8 box purple"> 	</div></td> 
+    <td> 	<div class = "5 box pink"> 	 	</div></td> 
+    </tr> 
+
+  </tbody>
+</table>
+
 <script>
-function sortTable(n) {
-  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-  table = document.getElementById("toggled-element");
-  switching = true;
-// Sets sorting direction:
-  dir = "asc"; 
-//Loop
-  while (switching) {
-//no switch
-    switching = false;
-    rows = table.rows;
-//goes through all the table rows -- needs an arbitrary <tr>
-    for (i = 1; i < (rows.length - 1); i++) {
-//should be no switching
-      shouldSwitch = false;
-//grab two to compare
-      x = rows[i].getElementsByTagName("TD")[n];
-      y = rows[i + 1].getElementsByTagName("TD")[n];
-//should these swap places? 
-      if (dir == "asc") {
-        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-//mark as "needs switch" and breaks loop
-          shouldSwitch= true;
-          break;
-        }
-      } else if (dir == "desc") {
-        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-          shouldSwitch = true;
-          break;
-        }
-      }
+var dirc = 0, dirr = 0, cc = 0, rr = 0;
+function colSlice(arr,ini=0,fin=0) {
+  if (ini<0) ini = arr.length+ini;
+  if (fin==0) fin = arr.length;
+  else if (fin<0) fin = arr.length+fin;
+  else fin = ini+fin
+  var sliced = [];
+  for (var i = 0; i < arr.length; i++) {
+    sliced.push([]); 
+    for (var j = 0; j < arr[i].length; j++) {
+      if (j>=ini && j<fin)
+        sliced[i].push(arr[i][j]);
     }
-    if (shouldSwitch) {
-//if switch is marked, confirm that it's been done
-      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-      switching = true;
-//each switch, count +1
-      switchcount ++;      
-    } else {
-//repeat
-      if (switchcount == 0 && dir == "asc") {
-        dir = "desc";
-        switching = true;
+  }
+  return sliced;
+}
+function colJoin(a,b) {
+  var joined = [];
+  for (var i = 0; i < a.length; i++) {
+    joined.push([]); 
+    for (var j = 0; j < a[i].length; j++) {
+      joined[i].push(a[i][j]);
+    }
+    for (var j = 0; j < b[i].length; j++) {
+      joined[i].push(b[i][j]);
+    }
+  }
+  return joined;
+}
+
+function sortTable(r,c) {
+  var table = document.getElementById("myTable");
+  var rows = table.getElementsByTagName("TR");
+  var matriz = [];
+  var m = null;
+  // Get matrix from table
+  for (i = 0; i < rows.length; i++) {
+    if (i==0) cols = rows[i].getElementsByTagName("TH");
+    else cols = rows[i].getElementsByTagName("TD");
+    m = [];
+    for (j = 0; j < cols.length; j++) {
+      m.push(cols[j].innerHTML);
+    }
+    matriz.push(m);
+  }
+  if (r==0) { // sort rows by col
+    if (c==cc) dirc = Math.abs(1-dirc);
+    else dirc = 0;
+    m = matriz[0];
+    matriz = matriz.slice(1);
+    matriz.sort(function(a, b){
+      if (dirc<=0) {
+        if (a[c].toLowerCase() > b[c].toLowerCase()) return 1;
+        else if (a[c].toLowerCase() < b[c].toLowerCase()) return -1;
+      } else {
+        if (a[c].toLowerCase() > b[c].toLowerCase()) return -1;
+        else if (a[c].toLowerCase() < b[c].toLowerCase()) return 1;
       }
+      return 0;
+    });
+    matriz.unshift(m);
+    cc = c;
+  }
+
+  if (c==0) { // sort cols by row
+    if (r==rr) dirr = Math.abs(1-dirr);
+    else dirr = 0;
+    m = colSlice(matriz,0,1);
+    matriz = colSlice(matriz,1);
+    // Transpose matriz
+    var newArray = matriz[0].map(function(col, i){
+      return matriz.map(function(row){
+        return row[i];
+      });
+    });
+
+    // Sort
+    newArray.sort(function(a, b){
+      if (dirr<=0) {
+        if (a[r].toLowerCase() > b[r].toLowerCase()) return 1;
+        else if (a[r].toLowerCase() < b[r].toLowerCase()) return -1;
+      } else {
+        if (a[r].toLowerCase() > b[r].toLowerCase()) return -1;
+        else if (a[r].toLowerCase() < b[r].toLowerCase()) return 1;
+      }
+      return 0;
+    });
+    // Transpose back
+    matriz = newArray[0].map(function(col, i){
+      return newArray.map(function(row){
+        return row[i];
+      });
+    });
+    matriz = colJoin(m,matriz);
+    rr = r;
+  }
+  // Update values
+  for (i = 0; i < rows.length; i++) {
+    if (i==0) cols = rows[i].getElementsByTagName("TH");
+    else cols = rows[i].getElementsByTagName("TD");
+    for (j = 0; j < cols.length; j++) {
+      cols[j].innerHTML = matriz[i][j];
     }
   }
 }
 </script>
-
 </body>
 </html>
