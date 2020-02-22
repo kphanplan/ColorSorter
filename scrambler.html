@@ -27,8 +27,6 @@ body {
     border-bottom: 1px solid #aaa;
     text-align: center;
   }
-
-
     .invis {
   display: none;
   }
@@ -82,24 +80,26 @@ body {
 
 
 <body>
-<h1>COLOR SCRAMBLER!!!</h1>
-<button><a href="https://kphanplan.github.io/ColorSorter/"> 
-GO TO COLOR SORTER</a> </button>
-<div class = "d-flex mb-3">
-<h3>RAINBOW</h3>
-<button onclick="sortTable(0,0)">NORMAL</button>
-</div>
+<div class = "container frame">
+  <div class = "d-flex justify-content-between header">
+<h1>COLOR SCRAMBLER!</h1>
 
-<div class = "d-flex mb-5">
+<div class = "float-right">
+<button class = "btn btn-lg cbtn"><a href="https://kphanplan.github.io/ColorSorter/scrambler"> GO TO SORTER</a> </button>
+</div>
+</div>
+You can sort the grid by red, green, and blue and also sort by the x and y axis. <br> Hit "reset" to return to its original state OR refresh the page. <br> Additionally, Feel free to check out my color table sorter! Link in the upper right-hand corner!
+<div class = "d-flex justify-content-between mb-3 mt-3">
   <div class = "d-flex">
     <h3>X: </h3>
     <button class = "btn btn-danger btn-lg"
     onclick="sortTable(1,0)">SORT: RED</button>
-   	<button class = "btn btn-success btn-lg"
-   	onclick="sortTable(2,0)">SORT: GREEN</button>
-	  <button class = "btn btn-info btn-lg"
-   	onclick="sortTable(3,0)">SORT: BLUE</button>
+    <button class = "btn btn-success btn-lg"
+    onclick="sortTable(2,0)">SORT: GREEN</button>
+    <button class = "btn btn-info btn-lg"
+    onclick="sortTable(3,0)">SORT: BLUE</button>
    </div>
+   <button onclick="sortTable(0,0)">RESET</button>
   <div class = "d-flex">
     <h3>Y: </h3>
     <button class = "btn btn-danger btn-lg"
@@ -257,6 +257,9 @@ GO TO COLOR SORTER</a> </button>
 
   </tbody>
 </table>
+</div>
+</body>
+</html>
 
 
 <!-- CREDIT: 

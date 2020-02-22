@@ -24,7 +24,24 @@
     border-bottom: 1px solid #aaa;
     text-align: center;
   }
+  .header {
+    border: black 4px solid;
+    background-color: gray;
+    padding-left : 2%;
+    padding-right : 2%;
+    margin-bottom: 2%;
+  }
+  .frame {
+    padding: 1%;
+    border-left: 4px black solid;
+    border-right: 4px black solid;
+    border-bottom: 4px black solid;
+    background-color: lightgray;
+  }
 
+  .cbtn {
+    background-color: black;
+  }
 
     .invis {
   display: none;
@@ -79,16 +96,16 @@
 
 
 <body>
+<div class = "container frame">
+  <div class = "d-flex justify-content-between header">
 <h1>Coding Challenge</h1>
 
-<div class = "d-flex mb-3">
-<h3>RAINBOW</h3>
-<button onclick="sortTable(0,0)">NORMAL</button>
+<div class = "float-right">
+<button class = "btn btn-lg cbtn"><a href="https://kphanplan.github.io/ColorSorter/scrambler"> GO TO SCRAMBLER</a> </button>
+</div>
 </div>
 
-<button><a href="https://kphanplan.github.io/ColorSorter/scrambler"> GO TO SCRAMBLER</a> </button>
-
-<div class = "d-flex mb-5">
+<div class = "d-flex justify-content-between mb-5">
   <div class = "d-flex">
     <h3>X: </h3>
     <button class = "btn btn-danger btn-lg"
@@ -98,6 +115,7 @@
     <button class = "btn btn-info btn-lg"
     onclick="sortTable(3,0)">SORT: BLUE</button>
    </div>
+   <button onclick="sortTable(0,0)">RESET</button>
   <div class = "d-flex">
     <h3>Y: </h3>
     <button class = "btn btn-danger btn-lg"
@@ -126,45 +144,45 @@
     <tr>
     <td class = "box">1</td>
 <!-- RED -->
-    <td> 4  <div class = "4 box red">     </div></td> 
-    <td> 6  <div class = "6 box orange">  </div></td> 
-    <td> 5  <div class = "5 box yellow">  </div></td> 
-    <td> 2  <div class = "2 box lime">    </div></td> 
-    <td> 1  <div class = "1 box green">   </div></td> 
-    <td> 1  <div class = "1 box cyan">    </div></td> 
-    <td> 1  <div class = "1 box blue">    </div></td> 
-    <td> 3  <div class = "3 box purple">  </div></td> 
-    <td> 7  <div class = "7 box pink">    </div></td> 
+    <td>   <div class = "4 box red">     </div></td> 
+    <td>   <div class = "6 box orange">  </div></td> 
+    <td>   <div class = "5 box yellow">  </div></td> 
+    <td>   <div class = "2 box lime">    </div></td> 
+    <td>   <div class = "1 box green">   </div></td> 
+    <td>   <div class = "1 box cyan">    </div></td> 
+    <td>   <div class = "1 box blue">    </div></td> 
+    <td>   <div class = "3 box purple">  </div></td> 
+    <td>   <div class = "7 box pink">    </div></td> 
     </tr>
 
 <!-- GREEN -->
 
     <tr>
-    <td>2 </td>    
-    <td> 1 <div class = "1 box red">     </div></td> 
-    <td> 5  <div class = "5 box orange">  </div></td> 
-    <td> 8  <div class = "8 box yellow">  </div></td> 
-    <td> 7  <div class = "7 box lime">    </div></td> 
-    <td> 7  <div class = "7 box green">   </div></td> 
-    <td> 6  <div class = "6 box cyan">    </div></td> 
-    <td> 4  <div class = "4 box blue">    </div></td> 
-    <td> 3  <div class = "3 box purple">  </div></td> 
-    <td> 2  <div class = "2 box pink">    </div></td>     
+    <td> 2</td>    
+    <td>   <div class = "1 box red">     </div></td> 
+    <td>   <div class = "5 box orange">  </div></td> 
+    <td>   <div class = "8 box yellow">  </div></td> 
+    <td>   <div class = "7 box lime">    </div></td> 
+    <td>   <div class = "7 box green">   </div></td> 
+    <td>   <div class = "6 box cyan">    </div></td> 
+    <td>   <div class = "4 box blue">    </div></td> 
+    <td>   <div class = "3 box purple">  </div></td> 
+    <td>   <div class = "2 box pink">    </div></td>     
 
     </tr>
 
 <!-- BLUE -->
     <tr>
     <td>3</td>
-    <td> 1  <div class = "1 box red">     </div></td> 
-    <td> 2  <div class = "2 box orange">  </div></td> 
-    <td> 3  <div class = "3 box yellow">  </div></td> 
-    <td> 3  <div class = "3 box lime">    </div></td> 
-    <td> 4  <div class = "4 box green">   </div></td> 
-    <td> 6  <div class = "6 box cyan">    </div></td> 
-    <td> 7  <div class = "7 box blue">    </div></td> 
-    <td> 8  <div class = "8 box purple">  </div></td> 
-    <td> 5  <div class = "5 box pink">    </div></td> 
+    <td>   <div class = "1 box red">     </div></td> 
+    <td>   <div class = "2 box orange">  </div></td> 
+    <td>   <div class = "3 box yellow">  </div></td> 
+    <td>   <div class = "3 box lime">    </div></td> 
+    <td>   <div class = "4 box green">   </div></td> 
+    <td>   <div class = "6 box cyan">    </div></td> 
+    <td>   <div class = "7 box blue">    </div></td> 
+    <td>   <div class = "8 box purple">  </div></td> 
+    <td>   <div class = "5 box pink">    </div></td> 
     </tr>
 
     <tr>
@@ -233,7 +251,7 @@
     </tr> 
 
     <tr>
-    <td>9   </td>
+    <td>9 </td>
     <td>  <div class = "1 box red">     </div></td> 
     <td>  <div class = "2 box orange">  </div></td> 
     <td>  <div class = "3 box yellow">  </div></td> 
@@ -244,10 +262,11 @@
     <td>  <div class = "8 box purple">  </div></td> 
     <td>  <div class = "5 box pink">    </div></td> 
     </tr> 
-
   </tbody>
 </table>
-
+</div>
+</body>
+</html>
 
 <!-- CREDIT: 
 https://stackoverflow.com/questions/50160377/html-table-sortable
