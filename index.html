@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>New</title>
-	<link rel="stylesheet" type="text/css" 
+  <title>New</title>
+  <link rel="stylesheet" type="text/css" 
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="jquery-3.4.1.min.js"></script>
 
 
-	<style> 
+  <style> 
   #myTable {
     border: none;
   }
 
   #myTable tr td {
-    border: none;
+    border: none;    
+    background-color: #e0e0e0;
     border-bottom: 1px solid #aaa;
     text-align: center;
   }
   #myTable tr td:first-child {
-    background-color: #e0e0e0;
+
     border-bottom: 1px solid #aaa;
     text-align: center;
   }
@@ -72,13 +73,12 @@
       background-color: rgb(223, 17, 181);
       color: rgb(223, 17, 181);
     }
-	</style>
+  </style>
 </head>
 
 
 
 <body>
-
 <h1>Coding Challenge</h1>
 
 <div class = "d-flex mb-3">
@@ -87,19 +87,30 @@
 </div>
 
 <div class = "d-flex mb-5">
-<h3>SORT BY: </h3>
+  <div class = "d-flex">
+    <h3>X: </h3>
     <button class = "btn btn-danger btn-lg"
     onclick="sortTable(1,0)">SORT: RED</button>
-   	<button class = "btn btn-success btn-lg"
-   	onclick="sortTable(2,0)">SORT: GREEN</button>
-	<button class = "btn btn-info btn-lg"
-   	onclick="sortTable(3,0)">SORT: BLUE</button>
+    <button class = "btn btn-success btn-lg"
+    onclick="sortTable(2,0)">SORT: GREEN</button>
+    <button class = "btn btn-info btn-lg"
+    onclick="sortTable(3,0)">SORT: BLUE</button>
+   </div>
+  <div class = "d-flex">
+    <h3>Y: </h3>
+    <button class = "btn btn-danger btn-lg"
+    onclick="sortTable(0,1)">SORT: RED</button>
+    <button class = "btn btn-success btn-lg"
+    onclick="sortTable(0,2)">SORT: GREEN</button>
+    <button class = "btn btn-info btn-lg"
+    onclick="sortTable(0,3)">SORT: BLUE</button>
+   </div>
 </div>
 
 <table id="myTable">
   <tbody>
     <tr>
-      <th> >>> </th>
+      <th> :D </th>
       <th>1</th>
       <th>2</th>
       <th>3</th>
@@ -110,129 +121,143 @@
       <th>8</th>
       <th>9</th>
     </tr>
+<!-- RED -->    
     <tr>
     <td class = "box">1</td>
-<!-- RED -->
-   	<td> 	<div class = "4 box red"> 	 	</div></td> 
-    <td> 	<div class = "6 box orange">  	</div></td> 
-    <td> 	<div class = "5 box yellow">  	</div></td> 
-    <td> 	<div class = "2 box lime"> 	 	</div></td> 
-    <td> 	<div class = "1 box green"> 	</div></td> 
-    <td> 	<div class = "1 box cyan"> 		</div></td> 
-    <td> 	<div class = "1 box blue"> 	 	</div></td> 
-    <td> 	<div class = "3 box purple"> 	</div></td> 
-    <td> 	<div class = "7 box pink"> 	 	</div></td> 
+    <td>  <div class = "4 box red">     </div></td> 
+    <td>  <div class = "6 box orange">  </div></td> 
+    <td>  <div class = "5 box yellow">  </div></td> 
+    <td>  <div class = "2 box lime">    </div></td> 
+    <td>  <div class = "1 box green">   </div></td> 
+    <td>  <div class = "1 box cyan">    </div></td> 
+    <td>  <div class = "1 box blue">    </div></td> 
+    <td>  <div class = "3 box purple">  </div></td> 
+    <td>  <div class = "7 box pink">    </div></td> 
     </tr>
 
 <!-- GREEN -->
 
     <tr>
-    <td>2 </td>
-    <td> 	<div class = "1 box red"> 	 	</div></td> 
-    <td> 	<div class = "5 box orange">  	</div></td> 
-    <td> 	<div class = "8 box yellow">  	</div></td> 
-    <td> 	<div class = "7 box lime"> 	 	</div></td> 
-    <td>	<div class = "7 box green"> 	</div></td> 
-    <td> 	<div class = "6 box cyan"> 		</div></td> 
-    <td> 	<div class = "4 box blue"> 	 	</div></td> 
-    <td> 	<div class = "3 box purple"> 	</div></td> 
-    <td> 	<div class = "2 box pink"> 	 	</div></td> 
+    <td class = "box">2 </td>
+    
+    <td>   <div class = "6 box orange">  </div></td> 
+    <td>   <div class = "5 box yellow">  </div></td> 
+    <td>   <div class = "2 box lime">    </div></td> 
+    <td>   <div class = "1 box green">   </div></td> 
+    <td>   <div class = "1 box cyan">    </div></td> 
+    <td>   <div class = "1 box blue">    </div></td> 
+    <td>   <div class = "3 box purple">  </div></td> 
+    <td>   <div class = "7 box pink">    </div></td> 
+    <td>   <div class = "4 box red">     </div></td> 
     </tr>
+
 
 <!-- BLUE -->
     <tr>
     <td>3</td>
-    <td> 	<div class = "1 box red"> 	 	</div></td> 
-    <td> 	<div class = "2 box orange">  	</div></td> 
-    <td> 	<div class = "3 box yellow">  	</div></td> 
-    <td> 	<div class = "3 box lime"> 	 	</div></td> 
-    <td> 	<div class = "4 box green"> 	</div></td> 
-    <td> 	<div class = "6 box cyan"> 		</div></td> 
-    <td> 	<div class = "7 box blue"> 	 	</div></td> 
-    <td> 	<div class = "8 box purple"> 	</div></td> 
-    <td> 	<div class = "5 box pink"> 	 	</div></td> 
+
+    <td>  <div class = "3 box yellow">  </div></td> 
+    <td>  <div class = "3 box lime">    </div></td> 
+    <td>  <div class = "4 box green">   </div></td> 
+    <td>  <div class = "6 box cyan">    </div></td> 
+    <td>  <div class = "7 box blue">    </div></td> 
+    <td>  <div class = "8 box purple">  </div></td> 
+    <td>  <div class = "5 box pink">    </div></td>     
+    <td>  <div class = "1 box red">     </div></td> 
+    <td>  <div class = "2 box orange">  </div></td> 
     </tr>
 
     <tr>
     <td>4 </td>
-    <td> 	<div class = "4 box red"> 	 	</div></td> 
-    <td> 	<div class = "6 box orange">  	</div></td> 
-    <td> 	<div class = "5 box yellow">  	</div></td> 
-    <td> 	<div class = "2 box lime"> 	 	</div></td> 
-    <td> 	<div class = "1 box green"> 	</div></td> 
-    <td> 	<div class = "1 box cyan"> 		</div></td> 
-    <td> 	<div class = "1 box blue"> 	 	</div></td> 
-    <td> 	<div class = "3 box purple"> 	</div></td> 
-    <td> 	<div class = "7 box pink"> 	 	</div></td> 
+    <td>  <div class = "2 box lime">    </div></td> 
+    <td>  <div class = "1 box green">   </div></td> 
+    <td>  <div class = "1 box cyan">    </div></td> 
+    <td>  <div class = "1 box blue">    </div></td> 
+    <td>  <div class = "3 box purple">  </div></td> 
+    <td>  <div class = "7 box pink">    </div></td>     
+    <td>  <div class = "4 box red">     </div></td> 
+    <td>  <div class = "6 box orange">  </div></td> 
+    <td>  <div class = "5 box yellow">  </div></td> 
+
     </tr> 
 
     <tr>
     <td>5</td>
-    <td> 	<div class = "1 box red"> 	 	</div></td> 
-    <td> 	<div class = "5 box orange">  	</div></td> 
-    <td> 	<div class = "8 box yellow">  	</div></td> 
-    <td> 	<div class = "7 box lime"> 	 	</div></td> 
-    <td> 	<div class = "7 box green"> 	</div></td> 
-    <td> 	<div class = "6 box cyan"> 		</div></td> 
-    <td> 	<div class = "4 box blue"> 	 	</div></td> 
-    <td> 	<div class = "3 box purple"> 	</div></td> 
-    <td> 	<div class = "2 box pink"> 	 	</div></td> 
+
+    <td>  <div class = "7 box green">   </div></td> 
+    <td>  <div class = "6 box cyan">    </div></td> 
+    <td>  <div class = "4 box blue">    </div></td> 
+    <td>  <div class = "3 box purple">  </div></td> 
+    <td>  <div class = "2 box pink">    </div></td>    
+    <td>  <div class = "1 box red">     </div></td> 
+    <td>  <div class = "5 box orange">  </div></td> 
+    <td>  <div class = "8 box yellow">  </div></td> 
+    <td>  <div class = "7 box lime">    </div></td> 
     </tr> 
 
     <tr>
     <td>6</td>
-    <td> 	<div class = "1 box red"> 	 	</div></td> 
-    <td> 	<div class = "2 box orange">  	</div></td> 
-    <td> 	<div class = "3 box yellow">  	</div></td> 
-    <td> 	<div class = "3 box lime"> 	 	</div></td> 
-    <td> 	<div class = "4 box green"> 	</div></td> 
-    <td> 	<div class = "6 box cyan"> 		</div></td> 
-    <td> 	<div class = "7 box blue"> 	 	</div></td> 
-    <td> 	<div class = "8 box purple"> 	</div></td> 
-    <td> 	<div class = "5 box pink"> 	 	</div></td> 
+
+    <td>  <div class = "6 box cyan">    </div></td> 
+    <td>  <div class = "7 box blue">    </div></td> 
+    <td>  <div class = "8 box purple">  </div></td> 
+    <td>  <div class = "5 box pink">    </div></td>     
+    <td>  <div class = "1 box red">     </div></td> 
+    <td>  <div class = "2 box orange">  </div></td> 
+    <td>  <div class = "3 box yellow">  </div></td> 
+    <td>  <div class = "3 box lime">    </div></td> 
+    <td>  <div class = "4 box green">   </div></td> 
     </tr> 
 
     <tr>
     <td>7</td>
-   	<td> 	<div class = "4 box red"> 	 	</div></td> 
-    <td> 	<div class = "6 box orange">  	</div></td> 
-    <td> 	<div class = "5 box yellow">  	</div></td> 
-    <td> 	<div class = "2 box lime"> 	 	</div></td> 
-    <td> 	<div class = "1 box green"> 	</div></td> 
-    <td> 	<div class = "1 box cyan"> 		</div></td> 
-    <td> 	<div class = "1 box blue"> 	 	</div></td> 
-    <td> 	<div class = "3 box purple"> 	</div></td> 
-    <td> 	<div class = "7 box pink"> 	 	</div></td> 
+
+    <td>  <div class = "1 box blue">    </div></td> 
+    <td>  <div class = "3 box purple">  </div></td> 
+    <td>  <div class = "7 box pink">    </div></td>     
+    <td>  <div class = "4 box red">     </div></td> 
+    <td>  <div class = "6 box orange">  </div></td> 
+    <td>  <div class = "5 box yellow">  </div></td> 
+    <td>  <div class = "2 box lime">    </div></td> 
+    <td>  <div class = "1 box green">   </div></td> 
+    <td>  <div class = "1 box cyan">    </div></td> 
     </tr> 
 
     <tr>
     <td>8</td>
-    <td> 	<div class = "1 box red"> 	 	</div></td> 
-    <td> 	<div class = "5 box orange">  	</div></td> 
-    <td> 	<div class = "8 box yellow">  	</div></td> 
-    <td> 	<div class = "7 box lime"> 	 	</div></td> 
-    <td> 	<div class = "7 box green"> 	</div></td> 
-    <td> 	<div class = "6 box cyan"> 		</div></td> 
-    <td> 	<div class = "4 box blue"> 	 	</div></td> 
-    <td> 	<div class = "3 box purple"> 	</div></td> 
-    <td> 	<div class = "2 box pink"> 	 	</div></td> 
+
+    <td>  <div class = "3 box purple">  </div></td> 
+    <td>  <div class = "2 box pink">    </div></td>    
+    <td>  <div class = "1 box red">     </div></td> 
+    <td>  <div class = "5 box orange">  </div></td> 
+    <td>  <div class = "8 box yellow">  </div></td> 
+    <td>  <div class = "7 box lime">    </div></td> 
+    <td>  <div class = "7 box green">   </div></td> 
+    <td>  <div class = "6 box cyan">    </div></td> 
+    <td>  <div class = "4 box blue">    </div></td>  
     </tr> 
 
     <tr>
-    <td>9 	</td>
-    <td> 	<div class = "1 box red"> 	 	</div></td> 
-    <td> 	<div class = "2 box orange">  	</div></td> 
-    <td> 	<div class = "3 box yellow">  	</div></td> 
-    <td> 	<div class = "3 box lime"> 	 	</div></td> 
-    <td> 	<div class = "4 box green"> 	</div></td> 
-    <td> 	<div class = "6 box cyan"> 		</div></td> 
-    <td> 	<div class = "7 box blue"> 	 	</div></td> 
-    <td> 	<div class = "8 box purple"> 	</div></td> 
-    <td> 	<div class = "5 box pink"> 	 	</div></td> 
+    <td>9   </td>
+ 
+    <td>  <div class = "5 box pink">    </div></td>    
+    <td>  <div class = "1 box red">    </div></td> 
+    <td>  <div class = "2 box orange">  </div></td> 
+    <td>  <div class = "3 box yellow">  </div></td> 
+    <td>  <div class = "3 box lime">    </div></td> 
+    <td>  <div class = "4 box green">   </div></td> 
+    <td>  <div class = "6 box cyan">    </div></td> 
+    <td>  <div class = "7 box blue">    </div></td> 
+    <td>  <div class = "8 box purple">  </div></td> 
     </tr> 
 
   </tbody>
 </table>
+
+
+<!-- CREDIT: 
+https://stackoverflow.com/questions/50160377/html-table-sortable
+-by-row-instead-of-column-with-javascript -->
 
 <script>
 var dirc = 0, dirr = 0, cc = 0, rr = 0;
